@@ -1,14 +1,14 @@
- import React,{useState,useCallback} from 'react'
+import React, { useState, useCallback } from 'react'
 import Image from "next/image"
 import Router from "next/router"
 import Link from "next/link";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { isValidEmailFormat,isValidRequiredInput,} from "../../lib/validation"
+import { isValidEmailFormat, isValidRequiredInput, } from "../../lib/validation"
 import { auth } from "../../firebase/clientApp"
 import logo from '../../assets/images/logo2.png'
 import styles from './Sign.module.scss';
 
-const Signin:React.FC = () => {
+const Signin: React.FC = () => {
   const [email, setEmail] = useState(""),
     [password, setPassword] = useState("");
   const inputEmail = useCallback((event) => { setEmail(event.target.value) }, [setEmail]);
